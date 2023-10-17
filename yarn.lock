@@ -19,6 +19,15 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@contentful/live-preview@^2.11.5":
+  version "2.11.5"
+  resolved "https://registry.yarnpkg.com/@contentful/live-preview/-/live-preview-2.11.5.tgz#ea7a692644214a41fbf2951845801f54e2e64f3f"
+  integrity sha512-45gyXxXelmCn2sfI5/25xWaMQDanekLPCJvpsc4yzUl7GBjGsNw15QbDzhHaQpnvgB42oqht3SbdRQy9SHi7XQ==
+  dependencies:
+    "@contentful/rich-text-types" "^16.2.0"
+    "@contentful/visual-sdk" "^1.0.0-alpha.24"
+    lodash.isequal "^4.5.0"
+
 "@contentful/rich-text-react-renderer@^15.18.0":
   version "15.18.0"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.18.0.tgz#9b2b8e61f0aa4044bebae8bc1b3f3a8612ff992c"
@@ -26,10 +35,15 @@
   dependencies:
     "@contentful/rich-text-types" "^16.3.0"
 
-"@contentful/rich-text-types@16.3.0", "@contentful/rich-text-types@^16.0.2", "@contentful/rich-text-types@^16.3.0":
+"@contentful/rich-text-types@16.3.0", "@contentful/rich-text-types@^16.0.2", "@contentful/rich-text-types@^16.2.0", "@contentful/rich-text-types@^16.3.0":
   version "16.3.0"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-16.3.0.tgz#d44145a43b32d61eb4d6a82d3001cdfddbbda42e"
   integrity sha512-OfQmAu5bxE0CgQA3WlUleVej+ifFG/iXmB2DmUl4EyWyFue1aiIvfjxQhcDRSH4n1jUNMJ6L1wInZL8uV5m3TQ==
+
+"@contentful/visual-sdk@^1.0.0-alpha.24":
+  version "1.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@contentful/visual-sdk/-/visual-sdk-1.0.0-alpha.24.tgz#d2d4d550ce7a49f99e961c0b34b40c766fae88e8"
+  integrity sha512-tteYw0rCT3eq+J0SLZ/2hqNdaf3WaPDwV4V9HhxbqAJDehVxJMfphULtcEYlzj7S+ZvHF/0QAxhAWsDpCtENNg==
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -1692,6 +1706,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
 
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
