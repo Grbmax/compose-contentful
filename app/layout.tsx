@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
+import { SessionProvider } from "@/lib/contentful/session-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {draftMode().isEnabled ? (
-          <p className="bg-orange-200 py-4 px-[6vw]">
-            Draft mode is on! <ExitDraftModeLink className="underline" />
-          </p>
-        ) : null}
-        {children}
+        <SessionProvider
+          locale="en-US"
+          enableLiveUpdates={draftMode().isEnabled}
+        >
+          {draftMode().isEnabled ? (
+            <p className="bg-orange-200 py-4 px-[6vw]">
+              Draft mode is on! <ExitDraftModeLink className="underline" />
+            </p>
+          ) : null}
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
