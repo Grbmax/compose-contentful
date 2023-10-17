@@ -15,7 +15,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   //TODO : Make locale dynamic based on appContext
-
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
