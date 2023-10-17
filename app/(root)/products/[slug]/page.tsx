@@ -4,6 +4,7 @@ import { ResolvingMetadata, Metadata } from "next";
 import { draftMode } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useContentfulLiveUpdates } from "@contentful/live-preview/react";
 
 interface ProductPageParams {
   slug: string;
@@ -46,7 +47,9 @@ async function ProductPage({ params }: ProductPageProps) {
     preview: draftMode().isEnabled,
   });
 
-  if (!product) {
+  const updatedProduct = useContentfulLiveUpdates(product);
+
+  if (!product || !updatedProduct) {
     return <div>Product not found</div>;
   }
 
@@ -56,19 +59,19 @@ async function ProductPage({ params }: ProductPageProps) {
         ← Products
       </Link>
       <div>
-        {product.image ? (
+        {updatedProduct.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={product.image.src}
+            src={updatedProduct.image.src}
             //Use contentful Images API to render responsive images
-            srcSet={`${product.image.src}?w=300 1x, ${product.image.src} 2x`}
+            srcSet={`${updatedProduct.image.src}?w=300 1x, ${product.image.src} 2x`}
             width={300}
             height={300}
-            alt={product.image.alt}
+            alt={updatedProduct.image.alt}
           />
         ) : null}
-        <h1>{product.title}</h1>
-        <RichText document={product.description} />
+        <h1>{updatedProduct.title}</h1>
+        <RichText document={updatedProduct.description} />
       </div>
     </div>
   );
